@@ -1,0 +1,48 @@
+/* src/pages/Home.css */
+
+/* --- HERO SECTION --- */
+.hero-section {
+  background-color: var(--color-text-dark); /* Fondo negro de alto contraste */
+  color: var(--color-white);
+  text-align: center;
+  padding: 100px 20px;
+  margin-bottom: 60px;
+}
+
+.hero-section h1 {
+  font-family: "Impact", sans-serif;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-family: "Antonio", sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* --- LISTADO DE PRODUCTOS --- */
+.products-listing {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.products-listing h2 {
+  font-family: "Antonio", sans-serif;
+  font-size: 2em;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* 🚨 DISEÑO DEL GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  width: 100%;
+}

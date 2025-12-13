@@ -1,0 +1,16 @@
+// tsconfig.node.json
+
+{
+  "compilerOptions": {
+    "composite": true, // 🚨 CORRECCIÓN: Soluciona el error "must have setting composite: true"
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2020",
+    "skipLibCheck": true,
+    
+    // 🚨 CORRECCIÓN: Soluciona el error "may not disable emit"
+    "noEmit": false 
+  },
+  "include": ["vite.config.ts"]
+}

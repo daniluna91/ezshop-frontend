@@ -1,0 +1,44 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Impact&family=Nunito+Sans:wght@300;400&display=swap");
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colores del Mini-Reboot */
+  --color-primary: #de755a; /* Coral/Acento */
+  --color-secondary: #aca4cd; /* Lavanda */
+  --color-background: #f7f5f4; /* Fondo claro */
+  --color-text-dark: #1a1a1a; /* Negro de alto contraste */
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+/* Base de Botones */
+.btn {
+  padding: 10px 20px;
+  border: 2px solid var(--color-text-dark);
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,76 @@
+/* src/components/Footer.css */
+
+.main-footer {
+  background-color: var(--color-text-dark); /* Fondo oscuro */
+  color: var(--color-white);
+  padding: 40px 20px 10px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  width: 20%;
+  min-width: 180px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-family: "Antonio", sans-serif;
+  font-size: 1.2em;
+  color: var(--color-primary); /* Título con color de acento */
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: var(--color-white); /* 🚨 Asegura que el texto (y el SVG) sea blanco */
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: var(--color-primary);
+}
+
+/* Sección Social */
+.social-icons a {
+  /* 🚨 CORRECCIÓN: Eliminamos font-size, el tamaño lo da el atributo size={24} en el TSX */
+  /* font-size: 1.5em; */
+  margin-right: 15px;
+}
+
+/* Pie de página final */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-section {
+    width: 100%;
+  }
+}
