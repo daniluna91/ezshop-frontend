@@ -13,11 +13,11 @@ import { CartProvider } from "./context/CartContext";
 // Contenedor principal para componentes que requieren el Navbar y el Footer
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <>
-        <Navbar />    {/* Padding para liberar espacio del Navbar sticky */}   {" "}
+        <Navbar />    {/* padding para liberar espacio del navbar sticky */}   {" "}
     <main style={{ paddingTop: "85px", minHeight: "100vh", width: "100%" }}>
             {children}   {" "}
     </main>
-        <Footer /> {/* EL FOOTER VA AQUÍ */} {" "}
+        <Footer /> {/* footer */} {" "}
   </>
 );
 
@@ -31,7 +31,7 @@ const App = () => {
                    {" "}
           <Routes>
                        {" "}
-            {/* 🚨 TODAS las rutas usan el Layout para tener Navbar y Footer */}
+            {/* todas las rutas usan el layout para tener navbar y footer */}
                        {" "}
             <Route
               path="/"

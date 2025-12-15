@@ -1,5 +1,3 @@
-// src/components/ProductCard.tsx
-
 import { Link } from "react-router-dom";
 import { Product } from "../types/models";
 import "./ProductCard.css";
@@ -12,10 +10,10 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const productLink = `/products/${product.id}`;
 
-  // LLAMAR AL HOOK Y OBTENER LA FUNCIÓN
+  // llama al hook y obtiene la funcion
   const { addToCart } = useCart();
 
-  // Usamos el id del producto para el enlace
+  // usamos el id del producto para el enlace
   return (
     <div className="product-card">
       <Link to={productLink}>
@@ -30,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         <p className="product-price">€{product.price.toFixed(2)}</p>
 
-        {/* 🚨 3. ASIGNAR LA FUNCIÓN AL BOTÓN */}
+        {/* asigna la funcion al boton */}
         <button className="btn btn-primary" onClick={() => addToCart(product)}>
           AÑADIR AL CARRITO
         </button>
