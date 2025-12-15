@@ -3,7 +3,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-// 🚨 IMPORTACIÓN DE ICONOS SOCIALES SVG
 import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 const Footer: React.FC = () => {
@@ -72,7 +71,7 @@ const Footer: React.FC = () => {
         <div className="footer-section social">
                     <h3>SÍGUENOS</h3>         {" "}
           <div className="social-icons">
-                        {/* 🚨 REEMPLAZO POR COMPONENTES DE ICONO SVG */}       
+                        {/* redes */}       
                {" "}
             <a
               href="https://instagram.com"
@@ -106,7 +105,7 @@ const Footer: React.FC = () => {
            {" "}
       <div className="footer-bottom">
                 &copy; {new Date().getFullYear()} EAZY PROJECT. Todos los
-        derechos         reservados.      {" "}
+        derechos reservados.      {" "}
       </div>
          {" "}
     </footer>
