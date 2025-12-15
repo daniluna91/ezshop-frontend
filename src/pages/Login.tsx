@@ -1,10 +1,7 @@
-// src/pages/Login.tsx
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// Renombramos la función de servicio para evitar conflicto con la función del hook
 import { login as loginService } from "../services/AuthService";
-import { useAuth } from "../context/AuthContext"; // 🚨 IMPORTACIÓN CRÍTICA
+import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
 const Login: React.FC = () => {
@@ -13,7 +10,6 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
-  // OBTENER LA FUNCIÓN LOGIN DEL CONTEXTO
   const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -21,16 +17,15 @@ const Login: React.FC = () => {
     setError(null);
 
     try {
-      // 1. Llamada al servicio de backend para iniciar sesión
+      // llamada al backend para iniciar sesion
       const result = await loginService({ email, password });
 
-      // 🚨 2. Actualiza el estado global (Contexto) con el token
+      // actualiza el estado global (Contexto) con el token
       login(result.token);
 
-      // 3. Redirigir al Home después del éxito
+      // te lleva al home si te logueas
       navigate("/");
     } catch (err: any) {
-      // Captura errores del backend (ej: credenciales inválidas)
       setError(err.message || "Error desconocido. Revisa tu conexión.");
     }
   };

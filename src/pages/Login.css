@@ -1,10 +1,7 @@
-/* src/pages/Login.css */
-
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Asegura que el contenedor ocupe la altura visible sin el Navbar */
   min-height: calc(100vh - 85px);
   padding: 20px;
 }
@@ -12,8 +9,8 @@
 .auth-box {
   background-color: var(--color-white);
   padding: 30px 40px;
-  border: 3px solid var(--color-text-dark); /* Marco fuerte */
-  box-shadow: 10px 10px 0 var(--color-primary); /* Sombra de acento llamativa */
+  border: 3px solid var(--color-text-dark);
+  box-shadow: 10px 10px 0 var(--color-primary);
   max-width: 400px;
   width: 100%;
 }
@@ -46,7 +43,6 @@
   font-size: 1em;
 }
 
-/* Enlace de Navegación */
 .auth-box .alt-link {
   text-align: center;
   margin-top: 15px;
@@ -59,14 +55,12 @@
   font-weight: 700;
 }
 
-/* Estilos de mensaje de error/éxito */
 .auth-box p[style] {
   padding: 10px;
   border-radius: 4px;
   font-weight: 700;
 }
 
-/* Responsive para pantallas muy pequeñas */
 @media (max-width: 450px) {
   .auth-box {
     padding: 20px;
