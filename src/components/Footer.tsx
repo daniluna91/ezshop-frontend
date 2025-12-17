@@ -71,6 +71,7 @@ const Footer: React.FC = () => {
           <div className="social-icons">
                         {/* redes */}           {" "}
             <a
+              // aqui van las redes, href para la url de la red social, target para abrir en una nueva pestaña, rel para seguridad, noopener es para añadir seguridad, y noreferrer lo mismo, y son para que no se abra en la misma pestaña
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"

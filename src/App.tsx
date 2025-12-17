@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // 🚨 1. IMPORTAR EL FOOTER
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
@@ -11,6 +11,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
 
 // Contenedor principal para componentes que requieren el Navbar y el Footer
+// usamos children para que el layout sea flexible y pueda contener cualquier componente, children es un prop que recibe el componente padre y lo renderiza en el lugar donde se encuentra {children}
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <>
         <Navbar />    {/* padding para liberar espacio del navbar sticky */}   {" "}
@@ -20,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
         <Footer /> {/* footer */} {" "}
   </>
 );
-
+// usamos {""} para que el codigo sea visible, son espacios en blanco
 const App = () => {
   return (
     <AuthProvider>
@@ -80,6 +81,7 @@ const App = () => {
                        {" "}
             {/* rutas de auth, ahora usan el layout para tener navbar y footer */}
                        {" "}
+            {/* el layout es un componente que envuelve a las rutas para que tengan navbar y footer */}
             <Route
               path="/login"
               element={

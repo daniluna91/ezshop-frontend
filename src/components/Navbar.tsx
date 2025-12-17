@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { useCart } from "../context/CartContext"; // hook para el contador del carrito
 import { useAuth } from "../context/AuthContext"; // hook de autenticacion
 
+//React.FC es un tipo de componente que recibe props, y se usa para dar tipo a los componentes
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
