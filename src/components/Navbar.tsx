@@ -1,21 +1,20 @@
-// src/components/Navbar.tsx
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { useCart } from "../context/CartContext"; // Hook para el contador del carrito
-import { useAuth } from "../context/AuthContext"; // HOOK DE AUTENTICACIÓN
+import { useCart } from "../context/CartContext"; // hook para el contador del carrito
+import { useAuth } from "../context/AuthContext"; // hook de autenticacion
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Lógica del Carrito
+  // la logica del carrito
   const { getTotalItems } = useCart();
   const itemCount = getTotalItems();
 
-  // Lógica de Autenticación
-  const { isLoggedIn, logout } = useAuth(); // Obtenemos el estado y la función para salir
+  // la autenticacion
+  const { isLoggedIn, logout } = useAuth(); // estado logueado y funcion de salir
 
+  // la logica del menu, toggleMenu es una funcion que invierte el estado de isMenuOpen
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -56,10 +55,10 @@ const Navbar: React.FC = () => {
       </nav>
 
       <div className="utility-icons">
-        {/* 🚨 ICONO DE BÚSQUEDA (🔍) ELIMINADO */}
+        {/* aqui estaba el link de busqueda pero lo borre por que daba errores */}
 
         {isLoggedIn ? (
-          // Si está logeado, mostramos el botón SALIR (Logout)
+          // si estas logueado te muestra el error de salir
           <button
             onClick={logout}
             className="btn-icon-link"
@@ -68,13 +67,13 @@ const Navbar: React.FC = () => {
             SALIR
           </button>
         ) : (
-          // Si no está logeado, mostramos el botón LOGIN
+          // si no estas logueado te muestra el boton de login
           <Link to="/login" className="btn-icon-link">
             LOGIN
           </Link>
         )}
 
-        {/* Icono y Contador del Carrito */}
+        {/* icono y contador del carrito */}
         <Link to="/cart" className="icon-link cart-icon">
           🛒
           {itemCount > 0 && <span className="cart-count">({itemCount})</span>}

@@ -1,9 +1,3 @@
-/* src/components/Navbar.css */
-
-/* ==================================== */
-/* 1. ESTILOS BASE (DESKTOP)            */
-/* ==================================== */
-
 .navbar {
   background-color: var(--color-white);
   color: var(--color-text-dark);
@@ -14,6 +8,7 @@
   border-bottom: 2px solid var(--color-text-dark);
   position: sticky;
   top: 0;
+  /* z-index para que el navbar este encima de todo */
   z-index: 1000;
 }
 
@@ -26,7 +21,7 @@
   line-height: 1;
 }
 
-/* Navegación Principal (Enlaces) */
+/* enlaces del menu */
 .main-nav ul {
   list-style: none;
   padding: 0;
@@ -47,11 +42,11 @@
   color: var(--color-primary);
 }
 
-/* Íconos de Utilidad y Botones de Auth (SOLUCIÓN DE ALINEACIÓN) */
+/* íconos de utilidad y botones de auth (solucion de alineacion) */
 .utility-icons {
   display: flex;
   gap: 20px;
-  align-items: center; /* 🚨 CRÍTICO: Alinea verticalmente los iconos y el botón LOGIN */
+  align-items: center;
 }
 
 .icon-link {
@@ -65,12 +60,12 @@
   color: var(--color-primary);
 }
 
-/* Ocultar el botón hamburguesa por defecto en desktop */
+/* ocultar el boton hamburguesa por defecto en desktop */
 .menu-toggle {
   display: none;
 }
 
-/* Contador de ítems en el carrito */
+/* contador de items en el carrito */
 .cart-count {
   font-size: 0.7em;
   font-weight: bold;
@@ -78,12 +73,10 @@
   margin-left: 5px;
 }
 
-/* ==================================== */
-/* 2. ESTILOS DE AUTENTICACIÓN (LOGIN/LOGOUT)  */
-/* ==================================== */
+/* estilos de login */
 
 .btn-icon-link {
-  /* Estilo de Botón Sólido y Compacto */
+  /* boton login */
   background-color: var(--color-primary);
   color: var(--color-white) !important;
   padding: 5px 12px;
@@ -102,9 +95,7 @@
   color: var(--color-white);
 }
 
-/* ==================================== */
-/* 3. MEDIA QUERY (MOBILE / TABLET)     */
-/* ==================================== */
+/* media query para hacer responsive en movil y tablet */
 
 @media (max-width: 768px) {
   .navbar {

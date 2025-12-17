@@ -1,10 +1,8 @@
-// src/pages/Home.tsx
-
 import ProductCard from "../components/ProductCard";
 import { Product } from "../types/models";
 import "./home.css";
 
-// 🚨 Mocks de productos (ajusta las rutas de imagen si es necesario)
+// mocks de productos
 const MOCK_PRODUCTS: Product[] = [
   {
     id: 1,
@@ -35,18 +33,18 @@ const MOCK_PRODUCTS: Product[] = [
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      {/* 1. HERO SECTION */}
+      {/* hero, debajo del navbar */}
       <section className="hero-section">
         <h1>MODA DE ALTO IMPACTO</h1>
-        <p>Nuevas colecciones ya disponibles. Estilo EAZY PROJECT.</p>
+        <p>The best world apparels. EAZY style.</p>
         <button className="btn btn-primary">VER COLECCIÓN</button>
       </section>
 
-      {/* 2. PRODUCT GRID - El layout que nos falló en Angular */}
+      {/* product grid, para mostrar los productos */}
       <section className="products-listing">
         <h2>NUESTROS PRODUCTOS</h2>
         <div className="product-grid">
-          {/* El equivalente al *ngFor, pero usando .map() */}
+          {/* .map() es como un bucle que recorre el array y ejecuta la funcion por cada elemento */}
           {MOCK_PRODUCTS.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

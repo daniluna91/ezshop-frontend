@@ -1,10 +1,8 @@
-// src/pages/Register.tsx
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Renombramos la función de servicio para evitar conflicto con la función del hook
 import { register as registerService } from "../services/AuthService";
-import { useAuth } from "../context/AuthContext"; // 🚨 IMPORTACIÓN CRÍTICA
+import { useAuth } from "../context/AuthContext";
 import "./Register.css";
 
 const Register: React.FC = () => {
@@ -15,7 +13,7 @@ const Register: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  // 🚨 OBTENER LA FUNCIÓN LOGIN DEL CONTEXTO
+  // obtener la funcion login
   const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,20 +25,22 @@ const Register: React.FC = () => {
       // 1. Llamada al servicio de backend para registro
       const result = await registerService({ name, email, password });
 
-      // 🚨 2. Actualiza el estado global (Contexto) con el token
+      // actualiza el estado global con el token
       login(result.token);
 
       setSuccess("Registro exitoso. ¡Redirigiendo!");
 
-      // 3. Redirigir al Home tras un breve retraso
+      // redirigir al Home tras un breve retraso
       setTimeout(() => {
         navigate("/");
       }, 2000);
     } catch (err: any) {
+      // setError es una funcion que actualiza el estado de error
       setError(err.message || "Error desconocido durante el registro.");
     }
   };
 
+  // usamos return para renderizar el formulario
   return (
     <div className="auth-container">
       <div className="auth-box">

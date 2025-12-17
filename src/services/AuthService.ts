@@ -1,14 +1,12 @@
-// src/services/AuthService.ts
-
 import axios from "axios";
 
-// 🚨 Define la URL base de tu backend (AJUSTA ESTO a tu puerto y ruta reales)
+// url del backend
 const API_BASE_URL = "http://localhost:5000/api/auth";
 
 interface AuthResponse {
   token: string;
   message: string;
-  // Puedes añadir datos del usuario aquí, como id o nombre
+  // añadir el user aqui
 }
 
 interface UserCredentials {
@@ -29,16 +27,13 @@ export const login = async (
       credentials
     );
 
-    // Guardar el token para futuras peticiones (Protección de rutas)
+    // guarda el token en el local storage
     localStorage.setItem("authToken", response.data.token);
 
     return response.data;
   } catch (error: any) {
-    // Devolvemos el mensaje de error del servidor
-    throw new Error(
-      error.response?.data?.message ||
-        "Fallo de conexión o credenciales incorrectas."
-    );
+    // si no estás registrado o metes mal tus datos en el login
+    throw new Error(error.response?.data?.message || "Ha Habido un Problema");
   }
 };
 
@@ -46,13 +41,13 @@ export const register = async (
   userData: RegisterData
 ): Promise<AuthResponse> => {
   try {
-    // 🚨 Ajusta la ruta a tu endpoint de registro si es diferente
+    // ajusta la ruta de el endpoint de registro si es diferente
     const response = await axios.post<AuthResponse>(
       `${API_BASE_URL}/register`,
       userData
     );
 
-    // Asumo que el registro también devuelve un token para iniciar sesión
+    // asume que el registro tambien devuelve un token para iniciar sesion
     localStorage.setItem("authToken", response.data.token);
 
     return response.data;

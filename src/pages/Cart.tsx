@@ -1,7 +1,5 @@
-// src/pages/Cart.tsx
-
 import { useCart } from "../context/CartContext";
-import { CartItem } from "../types/models"; // Importar CartItem
+import { CartItem } from "../types/models";
 import "./Cart.css";
 
 const Cart: React.FC = () => {
@@ -22,7 +20,7 @@ const Cart: React.FC = () => {
           <div className="cart-items-list">
             {cart.map((item: CartItem) => (
               <div key={item.id} className="cart-item">
-                {/* 🚨 RENDERIZADO DE LA IMAGEN CON RUTA CORREGIDA */}
+                {/* renderizado de la imagen, {item.id} es el id del producto */}
                 <img
                   src={item.imageUrl}
                   alt={item.name}
@@ -30,8 +28,11 @@ const Cart: React.FC = () => {
                 />
                 <div className="item-details">
                   <h3>{item.name.toUpperCase()}</h3>
+                  {/* precio del producto */}
                   <p>Precio: €{item.price.toFixed(2)}</p>
+                  {/* cantidad del producto */}
                   <p>Cantidad: {item.quantity}</p>
+                  {/* subtotal del producto */}
                   <p>Subtotal: €{(item.price * item.quantity).toFixed(2)}</p>
                 </div>
                 <button
@@ -44,7 +45,7 @@ const Cart: React.FC = () => {
             ))}
           </div>
 
-          {/* Resumen del Carrito */}
+          {/* resumen del carrito */}
           <div className="cart-summary">
             <h2>RESUMEN</h2>
             <div className="summary-line total-line">

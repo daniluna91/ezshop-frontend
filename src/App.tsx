@@ -31,8 +31,8 @@ const App = () => {
                    {" "}
           <Routes>
                        {" "}
-            {/* todas las rutas usan el layout para tener navbar y footer */}
-                       {" "}
+            {/* todas las rutas usan el layout para tener navbar y footer */}   
+                   {" "}
             <Route
               path="/"
               element={
@@ -78,7 +78,7 @@ const App = () => {
               }
             />
                        {" "}
-            {/* 🚨 RUTAS DE AUTH: AHORA USAN EL LAYOUT PARA TENER NAVBAR Y FOOTER */}
+            {/* rutas de auth, ahora usan el layout para tener navbar y footer */}
                        {" "}
             <Route
               path="/login"
@@ -97,8 +97,7 @@ const App = () => {
                 </Layout>
               }
             />
-                        {/* Puedes añadir una ruta para 404 aquí si quieres */} 
-                   {" "}
+                        {/* alomejor añado la ruta 404 aqui */}         {" "}
           </Routes>
                  {" "}
         </Router>

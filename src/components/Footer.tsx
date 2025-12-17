@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="main-footer">
            {" "}
-      <div className="footer-content">    
+      <div className="footer-content">
                {" "}
         <div className="footer-section company">
                     <h3>EAZY PROJECT</h3>         {" "}
@@ -69,8 +69,7 @@ const Footer: React.FC = () => {
         <div className="footer-section social">
                     <h3>SÍGUENOS</h3>         {" "}
           <div className="social-icons">
-                        {/* redes */}       
-               {" "}
+                        {/* redes */}           {" "}
             <a
               href="https://instagram.com"
               target="_blank"
