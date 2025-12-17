@@ -1,7 +1,5 @@
-/* src/components/Footer.css */
-
 .main-footer {
-  background-color: var(--color-text-dark); /* Fondo oscuro */
+  background-color: var(--color-text-dark);
   color: var(--color-white);
   padding: 40px 20px 10px;
   font-family: "Nunito Sans", sans-serif;
@@ -24,7 +22,7 @@
 .footer-section h3 {
   font-family: "Antonio", sans-serif;
   font-size: 1.2em;
-  color: var(--color-primary); /* Título con color de acento */
+  color: var(--color-primary);
   margin-bottom: 15px;
 }
 
@@ -38,7 +36,7 @@
 }
 
 .footer-section a {
-  color: var(--color-white); /* 🚨 Asegura que el texto (y el SVG) sea blanco */
+  color: var(--color-white);
   text-decoration: none;
   font-size: 0.9em;
   transition: color 0.2s;
@@ -48,14 +46,26 @@
   color: var(--color-primary);
 }
 
-/* Sección Social */
-.social-icons a {
-  /* 🚨 CORRECCIÓN: Eliminamos font-size, el tamaño lo da el atributo size={24} en el TSX */
-  /* font-size: 1.5em; */
-  margin-right: 15px;
+/* --- seccion social --- */
+
+.social-icons {
+  display: flex; /* corregido: alinea iconos en fila */
+  gap: 15px; /* corregido: espacio constante entre ellos */
+  align-items: center; /* corregido: centra verticalmente */
+  margin-top: 10px; /* corregido: separa del título H3 */
 }
 
-/* Pie de página final */
+.social-icons a {
+  display: flex; /* corregido: centra el SVG dentro del enlace */
+  margin-right: 0; /* corregido: elimina margen manual para usar gap */
+}
+
+.social-icons svg {
+  display: block; /* corregido: evita espacios de línea de texto */
+}
+
+/* -------------------------------- */
+
 .footer-bottom {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -64,7 +74,6 @@
   color: #aaa;
 }
 
-/* Responsive para móvil */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

@@ -6,19 +6,21 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease; /* corregido: añadida transición de transformación */
   text-decoration: none;
   color: inherit;
-  width: auto;
+  width: 100%; /* corregido: para que se adapte al contenedor padre */
+  height: 100%; /* corregido: asegura que todas las tarjetas en la misma fila midan lo mismo */
 }
 
 .product-card:hover {
   box-shadow: 0 5px 15px rgba(222, 117, 90, 0.4);
+  transform: translateY(-5px); /* corregido: efecto visual pro para la demo */
 }
 
 .product-image {
   width: 100%;
-  height: 300px;
+  height: 250px; /* corregido: altura base equilibrada */
   overflow: hidden;
   background-color: var(--color-secondary);
 }
@@ -26,24 +28,52 @@
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* clave para que no se deformen las fotos */
   display: block;
 }
 
 .product-details {
   padding: 15px;
+  display: flex; /* corregido: flexbox interno para alinear contenido */
+  flex-direction: column;
+  flex-grow: 1; /* corregido: hace que el área de detalles ocupe el espacio sobrante */
+  justify-content: space-between; /* corregido: empuja el botón siempre al final de la tarjeta */
 }
 
 .product-name {
   font-family: "Antonio", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em; /* corregido: un poco más pequeño para que quepa en móviles */
   color: var(--color-text-dark);
   margin: 0 0 5px 0;
+  min-height: 2.4em; /* corregido: reserva espacio para nombres de 2 líneas y que no se descuadre */
 }
 
 .product-price {
   font-family: "Impact", sans-serif;
-  font-size: 1.8em;
+  font-size: 1.6em; /* corregido: ajustado para visualización móvil */
   color: var(--color-primary);
   margin: 5px 0 15px 0;
+}
+
+/* --- RESPONSIVE CORREGIDO --- */
+
+@media (max-width: 768px) {
+  .product-image {
+    height: 200px; /* corregido: reducimos altura en tablets */
+  }
+  .product-name {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 160px; /* corregido: reducimos altura en móviles pequeños */
+  }
+  .product-price {
+    font-size: 1.4em;
+  }
+  .product-details {
+    padding: 10px; /* corregido: menos padding para ganar espacio */
+  }
 }
