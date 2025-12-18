@@ -24,7 +24,7 @@ const Register: React.FC = () => {
     setSuccess(null);
 
     try {
-      // 1. Llamada al servicio de backend para registro
+      // llamada al servicio de backend para registro
       const result = await registerService({ name, email, password });
 
       // actualiza el estado global con el token
