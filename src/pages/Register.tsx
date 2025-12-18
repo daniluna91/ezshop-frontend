@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// Renombramos la función de servicio para evitar conflicto con la función del hook
+// renombramos la funcion de servicio para evitar conflicto con la funcion del hook
 import { register as registerService } from "../services/AuthService";
 import { useAuth } from "../context/AuthContext";
 import "./Register.css";
 
+// React.FC es un tipo de componente que recibe props y los retorna JSX, navigate es una funcion que permite redirigir a otra ruta, y useNavigate y useState son hooks de React
+//los hooks son funciones que permiten usar el estado y el ciclo de vida de los componentes
 const Register: React.FC = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");

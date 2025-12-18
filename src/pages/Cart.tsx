@@ -2,6 +2,9 @@ import { useCart } from "../context/CartContext";
 import { CartItem } from "../types/models";
 import "./Cart.css";
 
+// React.FC es un tipo de componente que recibe props y los retorna JSX, JSX es un lenguaje de marcado que se parece a HTML, cart, removeFromCart, clearCart, getTotalPrice son funciones que vienen del hook useCart
+// los hooks son funciones que permiten usar el estado y el ciclo de vida de los componentes
+
 const Cart: React.FC = () => {
   const { cart, removeFromCart, clearCart, getTotalPrice } = useCart();
   const totalPrice = getTotalPrice();
